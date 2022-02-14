@@ -31,7 +31,6 @@
 
 
 // Iteration 2 - using promises
-let loquesea = 0
 obtainInstruction('steak', 0)
   .then( (step0) => {
     document.querySelector("#steak").innerHTML += `<li>${step0}</li>`
@@ -74,6 +73,8 @@ obtainInstruction('steak', 0)
     document.querySelector("#steak").innerHTML += `<li>${step7}</li>`
     document.querySelector("#steak").innerHTML += `<li>Stake is ready!</li>`
 
+    document.querySelector("#steakImg").removeAttribute("hidden");
+
   })
 
   .catch ( (err) => {
@@ -103,6 +104,8 @@ async function makeBroccoli() {
     const response7 = await obtainInstruction("broccoli", 6)
     document.querySelector("#broccoli").innerHTML += `<li>${response7}</li>`
     document.querySelector("#broccoli").innerHTML += `<li>Broccoli is ready!</li>`
+
+    document.querySelector("#broccoliImg").removeAttribute("hidden");
   }
   catch (err){
     console.log(err)
