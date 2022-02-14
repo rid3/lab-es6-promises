@@ -116,4 +116,30 @@ makeBroccoli()
 
 
 // Bonus 2 - Promise all
-// ...
+Promise.all([
+  obtainInstruction("brusselsSprouts", 0),
+  obtainInstruction("brusselsSprouts", 1),
+  obtainInstruction("brusselsSprouts", 2),
+  obtainInstruction("brusselsSprouts", 3),
+  obtainInstruction("brusselsSprouts", 4),
+  obtainInstruction("brusselsSprouts", 5),
+  obtainInstruction("brusselsSprouts", 6),
+  obtainInstruction("brusselsSprouts", 7),
+])
+.then((response1) => {
+// solo podemos ejecutar codigo o usar la informacion completa.
+// console.log(response1)
+const myIngredients = response1
+const [ ingredient0, ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, ingredient6, ingredient7 ] =  myIngredients
+// console.log(myIngredients)
+
+document.querySelector("#brusselsSprouts").innerHTML += `<li>${ingredient0}</li>`
+document.querySelector("#brusselsSprouts").innerHTML += `<li>${ingredient1}</li>`
+document.querySelector("#brusselsSprouts").innerHTML += `<li>${ingredient2}</li>`
+document.querySelector("#brusselsSprouts").innerHTML += `<li>${ingredient3}</li>`
+document.querySelector("#brusselsSprouts").innerHTML += `<li>${ingredient4}</li>`
+document.querySelector("#brusselsSprouts").innerHTML += `<li>${ingredient5}</li>`
+document.querySelector("#brusselsSprouts").innerHTML += `<li>${ingredient6}</li>`
+document.querySelector("#brusselsSprouts").innerHTML += `<li>${ingredient7}</li>`
+document.querySelector("#brusselsSproutsImg").removeAttribute("hidden");
+})
